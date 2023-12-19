@@ -1,0 +1,157 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+  
+
+</head>
+
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="font-effect-fire"  style ="font-family: Sofia, sans-serif;
+      font-size: 90px;"> Make your day a great day</h1>
+
+    
+    
+     
+    </div>
+  </div>
+</section>
+
+{% if user.is_authenticated %}
+
+<section class="container text-center">
+  
+
+  <hr> <br>
+  <div class="row">
+    <div class="col-md-3">
+      <a href="{% url 'notes' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/notes.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="font-effect-purpel"  style ="font-family: Sofia, sans-serif;
+            font-size: 20px;"> 
+              My Notes
+            </h5>
+            
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+      <a href="{% url 'calendar' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/calendar.png' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="font-effect-purpel"  style ="font-family: Sofia, sans-serif;
+            font-size: 20px;">
+              MY CALENDAR
+            </h5>
+           
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="{% url 'calorie' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/logo.png' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="font-effect-purpel"  style ="font-family: Sofia, sans-serif;
+            font-size: 20px;">
+              Calorie Calculator
+            </h5>
+            
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="{% url 'notify' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/ToDos.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="font-effect-purpel"  style ="font-family: Sofia, sans-serif;
+            font-size: 20px;">
+              My To-Do
+            </h5>
+           
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <br><br><br>
+  <div class="row">
+    <div class="col-md-3 ">
+      <a href="{% url 'book' %}">
+        <div class="card mt-20">
+          <img class="card-img-top" src="{% static 'images/books.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="font-effect-purpel"  style ="font-family: Sofia, sans-serif;
+            font-size: 20px;">
+              Book shelf
+            </h5>
+            
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+
+    <div class="col-md-3">
+      <a href="{% url 'timer' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/timer.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="font-effect-purpel"  style ="font-family: Sofia, sans-serif;
+            font-size: 20px;">
+              Pomodoro
+            </h5>
+           
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="{% url 'wiki' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/wiki.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="font-effect-purpel"  style ="font-family: Sofia, sans-serif;
+            font-size: 20px;">
+              WikiPedia
+            </h5>
+           
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+    <div class="col-md-3">
+      <a href="{% url 'diary' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/original.png' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="font-effect-purpel"  style ="font-family: Sofia, sans-serif;
+            font-size: 20px;">
+              My Diary
+            </h5>
+          
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+</section>
+{% endif %}
+
+{% endblock content %}

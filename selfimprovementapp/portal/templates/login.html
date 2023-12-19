@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<canvas id="particle-canvas"></canvas> 
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+	
+	<div class="container">
+		 <div class="d-flex justify-content-center h-100"> 
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+
+					<h3 id="form-title">LOGIN</h3>
+				</div>
+				<div class="form_container">
+					<form method="POST" action="">
+                        {% csrf_token %}
+						<div class="form-input">
+							
+							<input type="text" name="username" placeholder="Username..." class="form-control">
+						</div>
+						<div class="form-input">
+							
+								<input type="password" name="password" placeholder="Password..." class="form-control" >
+						</div>
+
+							<div class="form-input">
+				 				<input class="btn login_btn" type="submit" value="Login">
+				   			</div>
+					</form>
+
+				</div>
+				{% for message in messages %}
+                 <p id="messages">{{message}}</p>
+                {% endfor %}
+		
+          
+		
+				<div class="mt-4">
+					<div class="form-input">
+						Don't have an account? <a href="{% url 'register' %}" class="ml">Sign Up</a>
+					</div> 
+			
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="{% static 'js/login.js' %}"></script>
+</body>
+
+</html>

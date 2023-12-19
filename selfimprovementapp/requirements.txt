@@ -1,0 +1,8 @@
+django
+django-tinymce
+fontawsomefree
+django-crispy-forms
+django-recaptcha
+pillow
+six
+ 

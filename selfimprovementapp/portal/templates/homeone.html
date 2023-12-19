@@ -1,0 +1,66 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="h1 fw-bold">Make your day a great day</h1>
+      
+      <p class="lead text-muted"></p>
+     
+      <p>
+        <a href="{% url 'register'%}" class="btn btn-primary my-2">Make an account</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="container text-center">
+  
+
+  <hr> <br>
+  <div class="row">
+    <div class="col-md-3">
+      <a href="{% url 'calorie' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/logo.png' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Calorie Calculator
+            </h5>
+          
+          </div>
+        </div>
+      </a>
+    </div>
+    
+  
+  
+
+
+
+    <div class="col-md-3">
+      <a href="{% url 'timer' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/timer.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Pomodoro
+            </h5>
+           
+          </div>
+        </div>
+      </a>
+    </div>
+   
+    </div>
+
+
+    
+
+
+</section>
+
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<canvas id="particle-canvas"></canvas> 
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<h3 id="form-title">REGISTER ACCOUNT</h3>
+				</div>
+				<div class="form_container">
+
+					<form method="POST" action="">
+                        {% csrf_token %}
+						<div class="form-input">
+							{{form.username}}
+						</div>
+						<div class="form-input">
+							{{form.email}}
+
+						</div>
+						<div class="form-input">
+							
+                            {{form.password1}}
+						</div>
+						<div class="form-input">
+							
+                            {{form.password2}}
+						
+						</div>
+
+				   		<div class="form-input">
+				 			<input class="btn login_btn" type="submit" value="Register Account">
+				   		</div>
+					</form>
+				</div>
+				<div>
+					
+				</div>
+                {{form.errors}}
+		
+				<div class="mt-4">
+					<div class="form-input">
+						Already have an account? <a href="{% url 'login' %}" class="ml">Login</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="{% static 'js/register.js' %}"></script>
+</body>
+</html>
+

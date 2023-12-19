@@ -1,0 +1,99 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    
+    <script src="https://kit.fontawesome.com/e6ab8db01a.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/timer.css' %}">
+
+
+</head>
+<body>
+    <section>
+        
+        <div class="container">
+            <img class="anime-imgs" src="{%static 'images/pomodoro.png' %}" alt="Avatar" style= "height: 25%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 25%;">
+        <br>
+            <div>
+            <audio id="audio">
+                <source src="{% static 'music/nature sound.mp3'%}" type="audio/mpeg">
+            </audio>
+            <!-- <button id="playPauseBTN" onclick="playPause()">play &#9658;</button> -->
+            <button id="playPauseBTN" onclick="playPause()"><img class="anime-imgs" src="{%static 'images/musical-note.png' %}" alt="Avatar" style= "height: 5%;width: 5%;">  <i class="fa fa-play-circle" style="font-size:36px;"> 
+                
+                
+                <br></i></button> 
+            &nbsp;
+            &nbsp;
+            
+        </div>
+
+        
+        
+
+            <h1>pomodoro</h1>
+
+            <div class="painel">
+                <p id="work">work</p>
+                <p id="break">break</p>
+            </div>
+
+            <div class="timer">
+                <div class="circle">
+                    <div class="time" >
+                        <p id="minutes"></p>
+                        <p>:</p>
+                        <p id="seconds"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="start" onclick="start()"><i class="fa fa-play-circle" style="font-size:36px;"></i></button>
+               
+                <a id="reset" href=""><i class="fa fa-play-circle" style="font-size:36px;"></i></a>
+            </div>
+        </div>
+    </section>
+    <script>
+        var audio = document.getElementById('audio');
+        var playPauseBTN = document.getElementById('playPauseBTN');
+        var count = 0;
+
+        function playPause(){
+            if(count== 0){
+                count = 1;
+                audio.play();
+            }
+            else{
+                count = 0;
+                audio.pause();
+            }
+            }
+        </script>
+
+    <!-- SCRIPT -->
+    <script src="{% static 'js/timer.js' %}"></script>
+</body>
+</html>
+{% endblock %}

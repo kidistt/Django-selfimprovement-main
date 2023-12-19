@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<div class="container">
+    <img class="anime-imgs" src="{%static 'images/take-note.png' %}" alt="Avatar" style="height: 25%; display: block;margin-left: auto;
+      margin-right: auto;
+      width: 25%;"> 
+    <a href="{% url 'createnote' %}" class="btn btn-fourth btn-lg active" role="button" aria-pressed="true">Add Note</a>
+    <br><br>  
+   
+    <div class="row">
+       {% for notes in notes %}
+        <div class="col-md-3">
+            <a href="{% url 'notesdetail' notes.id %}">
+                <div class="card">
+                    <div class="card-header">{{notes.title}}</div>
+                    <div class="card-body">{{notes.description|slice:"0:100"}}</div>
+                    <div class="card-footer mt-auto "><a href="{% url 'delete-note' notes.id %}">
+                        <i class="fa fa-trash fa-2x"></i></a>
+                        <a href="{% url 'editnotes' notes.id %}"><i style="font-size:28px" class="fa">&#xf0fe;</i></a>
+                    </div>
+                    
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+        <br><br>
+
+    </div>
+</div>
+<br><br>
+
+
+{% endblock content %}
